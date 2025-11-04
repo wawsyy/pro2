@@ -1,7 +1,6 @@
-# FHEVM Hardhat Template
+# Encrypted Survey - Privacy-Preserving Voting System
 
-A Hardhat-based template for developing Fully Homomorphic Encryption (FHE) enabled Solidity smart contracts using the
-FHEVM protocol by Zama.
+A privacy-preserving survey and voting system built with Fully Homomorphic Encryption (FHE) using the FHEVM protocol by Zama. This project enables secure, anonymous voting where individual votes remain encrypted throughout the entire process.
 
 ## Quick Start
 
@@ -68,14 +67,19 @@ For detailed instructions see:
 ## 📁 Project Structure
 
 ```
-fhevm-hardhat-template/
-├── contracts/           # Smart contract source files
-│   └── FHECounter.sol   # Example FHE counter contract
-├── deploy/              # Deployment scripts
-├── tasks/               # Hardhat custom tasks
-├── test/                # Test files
-├── hardhat.config.ts    # Hardhat configuration
-└── package.json         # Dependencies and scripts
+encrypted-survey/
+├── contracts/                 # Smart contract source files
+│   └── EncryptedSurvey.sol   # Privacy-preserving survey contract
+├── deploy/                    # Deployment scripts
+├── tasks/                     # Hardhat custom tasks
+├── test/                      # Test files
+├── frontend/                  # Next.js frontend application
+│   ├── app/                  # Next.js app directory
+│   ├── components/           # React components
+│   ├── hooks/                # Custom React hooks
+│   └── fhevm/                # FHEVM SDK integration
+├── hardhat.config.ts          # Hardhat configuration
+└── package.json               # Dependencies and scripts
 ```
 
 ## 📜 Available Scripts
