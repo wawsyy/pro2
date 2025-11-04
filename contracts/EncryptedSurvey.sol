@@ -152,4 +152,11 @@ contract EncryptedSurvey is SepoliaConfig {
         if (!isConfigured) revert SurveyNotConfigured();
         count = _options.length;
     }
+
+    /// @notice Returns whether an address has already voted.
+    /// @param voter The address to check.
+    /// @return voted True if the address has voted, false otherwise.
+    function hasVoterSubmitted(address voter) external view returns (bool voted) {
+        voted = hasVoted[voter];
+    }
 }
