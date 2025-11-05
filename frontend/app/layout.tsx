@@ -5,8 +5,8 @@ import { Providers } from "./providers";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Encrypted Survey Voting",
-  description: "Privacy-preserving encrypted survey powered by the FHEVM.",
+  title: "Encrypted Survey | Privacy-Preserving Voting System",
+  description: "Create and participate in confidential surveys with full privacy guarantees powered by FHEVM fully homomorphic encryption technology.",
 };
 
 export default async function RootLayout({
