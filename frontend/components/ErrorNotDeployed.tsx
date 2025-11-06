@@ -4,25 +4,25 @@ export function errorNotDeployed(chainId: number | undefined) {
       <div className="col-span-full mx-20">
         <p className="text-4xl leading-relaxed">
           {" "}
-          <span className="font-mono bg-red-500">Error</span>:{" "}
-          <span className="font-mono bg-white">FHECounter.sol</span> Contract
+          <span className="font-mono bg-red-500 text-white px-2">Error</span>:{" "}
+          <span className="font-mono bg-white px-2">EncryptedSurvey.sol</span> Contract
           Not Deployed on{" "}
-          <span className="font-mono bg-white">chainId={chainId}</span>{" "}
+          <span className="font-mono bg-white px-2">chainId={chainId}</span>{" "}
           {chainId === 11155111 ? "(Sepolia)" : ""} or Deployment Address
           Missing.
         </p>
         <p className="text-xl leading-relaxed mt-8">
           It appears that the{" "}
-          <span className="font-mono bg-white">FHECounter.sol</span> contract
+          <span className="font-mono bg-white px-2">EncryptedSurvey.sol</span> contract
           has either not been deployed yet, or the deployment address is missing
           from the ABI directory{" "}
-          <span className="font-mono bg-white">root/packages/site/abi</span>. To
-          deploy <span className="font-mono bg-white">FHECounter.sol</span> on
+          <span className="font-mono bg-white px-2">frontend/abi</span>. To
+          deploy <span className="font-mono bg-white px-2">EncryptedSurvey.sol</span> on
           Sepolia, run the following command:
         </p>
-        <p className="font-mono text-2xl leading-relaxed bg-black text-white p-4 mt-12">
-          <span className="opacity-50 italic text-red-500">
-            #from &lt;root&gt;/packages/fhevm-hardhat-template
+        <p className="font-mono text-2xl leading-relaxed bg-slate-900 text-white p-4 mt-12 rounded-lg">
+          <span className="opacity-50 italic text-green-400">
+            # from project root directory
           </span>
           <br />
           npx hardhat deploy --network{" "}
@@ -30,7 +30,7 @@ export function errorNotDeployed(chainId: number | undefined) {
         </p>
         <p className="text-xl leading-relaxed mt-12">
           Alternatively, switch to the local{" "}
-          <span className="font-mono bg-white">Hardhat Node</span> using the
+          <span className="font-mono bg-white px-2">Hardhat Node</span> using the
           MetaMask browser extension.
         </p>
       </div>
