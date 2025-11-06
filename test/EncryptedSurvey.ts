@@ -112,4 +112,18 @@ describe("EncryptedSurvey", function () {
 
     expect(decryptedByBob).to.equal(2);
   });
+
+  it("should check if a voter has submitted", async function () {
+    const encryptedVote = await encryptVote(signers.alice);
+
+    await surveyContract
+      .connect(signers.alice)
+      .submitVote(0, encryptedVote.handles[0], encryptedVote.inputProof);
+
+    const hasVoted = await surveyContract.hasVoterSubmitted(signers.alice.address);
+    const hasNotVoted = await surveyContract.hasVoterSubmitted(signers.bob.address);
+
+    expect(hasVoted).to.be.true;
+    expect(hasNotVoted).to.be.false;
+  });
 });
