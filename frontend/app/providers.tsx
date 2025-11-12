@@ -34,7 +34,7 @@ export function Providers({ children }: Props) {
   return (
     <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider chains={chains} theme={lightTheme({ accentColor: "#4338ca" })}>
+        <RainbowKitProvider theme={lightTheme({ accentColor: "#4338ca" })}>
           <MetaMaskProvider>
             <MetaMaskEthersSignerProvider initialMockChains={{ 31337: "http://localhost:8545" }}>
               <InMemoryStorageProvider>{children}</InMemoryStorageProvider>

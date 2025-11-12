@@ -48,7 +48,7 @@ const normalizeHandle = (value: unknown): string => {
     return value;
   }
   if (typeof value === "bigint") {
-    return ethers.hexlify(value);
+    return ethers.toBeHex(value);
   }
   if (value && typeof value === "object" && "toString" in value) {
     try {
@@ -56,7 +56,7 @@ const normalizeHandle = (value: unknown): string => {
       if (text.startsWith("0x")) {
         return text;
       }
-      return ethers.hexlify(BigInt(text));
+      return ethers.toBeHex(BigInt(text));
     } catch {
       return String(value);
     }
@@ -313,7 +313,7 @@ export function useEncryptedSurvey({
               ? {
                   ...item,
                   decrypting: false,
-                  decryptedTotal: 0n,
+                  decryptedTotal: BigInt(0),
                 }
               : item,
           ),
@@ -339,7 +339,7 @@ export function useEncryptedSurvey({
         );
 
         const clearValue = decrypted[handle];
-        const bigintValue = clearValue !== undefined ? BigInt(clearValue) : 0n;
+        const bigintValue = clearValue !== undefined ? BigInt(clearValue) : BigInt(0);
 
         setOptions((prev) =>
           prev.map((item) =>
